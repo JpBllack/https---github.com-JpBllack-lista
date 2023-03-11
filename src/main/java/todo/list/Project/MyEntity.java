@@ -1,4 +1,4 @@
-package todo.list.Project;
+package todo.list.project;
 
 import io.quarkus.hibernate.orm.panache.PanacheEntity;
 import javax.persistence.Entity;

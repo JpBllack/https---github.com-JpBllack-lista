@@ -1,18 +1,18 @@
-package todo.list.Project.model;
+package todo.list.project.model;
 
 import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+
 import javax.persistence.OneToMany;
 
 import io.quarkus.hibernate.orm.panache.PanacheEntity;
 @Entity
 public class Categoria  extends PanacheEntity {
 
-    @Id
+    
     @GeneratedValue
     private Long id;
 

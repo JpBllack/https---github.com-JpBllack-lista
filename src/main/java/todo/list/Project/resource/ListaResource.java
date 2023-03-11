@@ -1,4 +1,4 @@
-package todo.list.Project.resource;
+package todo.list.project.resource;
 
 import java.util.List;
 
@@ -13,7 +13,7 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
-import todo.list.Project.model.*;
+import todo.list.project.model.*;
 
 @Path("/listas")
 public class ListaResource {
