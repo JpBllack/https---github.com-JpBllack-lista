@@ -5,4 +5,4 @@
 -- insert into myentity (id, field) values(nextval('hibernate_sequence'), 'field-3');
 
 insert into Lista (id, nome, descricao, quantidade ) values(nextval('hibernate_sequence'), 'Cupuaçu', 'uma fruto do centro oeste do pais',20);
-insert into Lista (id, nome, descricao, quantidade ) values(nextval('hibernate_sequence'), 'Laranja', 'uma laraja laranja oras kkkk',14);
+insert into Lista (id, nome, descricao, quantidade ) values(nextval('hibernate_sequence'), 'Laranja', 'uma laraja laranja oras kkkk',15);

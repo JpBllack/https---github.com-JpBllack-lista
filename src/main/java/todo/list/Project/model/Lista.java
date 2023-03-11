@@ -1,14 +1,25 @@
 package todo.list.Project.model;
 
 import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
+import javax.persistence.Column;
 
 import io.quarkus.hibernate.orm.panache.PanacheEntity;
 @Entity
 public class Lista extends PanacheEntity {
 
+    @Column(length = 80)
    private String nomeItem;
    private String descricao;
    private int quantidade;
+
+   @ManyToOne
+    private Categoria categoria;
+
+    public void setCategoria(Categoria categoria) {
+    this.categoria = categoria;
+}
+
    
 public String getNomeItem() {
     return nomeItem;
