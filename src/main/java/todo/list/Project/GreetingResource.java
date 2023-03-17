@@ -1,4 +1,4 @@
-package todo.list.project;
+package todo.list.Project;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;

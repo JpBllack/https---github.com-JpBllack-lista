@@ -1,4 +1,4 @@
-package todo.list.project.DTO;
+package todo.list.Project.DTO;
 
     public class ListaDTO {
         private String nomeItem;

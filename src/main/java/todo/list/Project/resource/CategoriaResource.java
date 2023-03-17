@@ -1,4 +1,4 @@
-package todo.list.project.resource;
+package todo.list.Project.resource;
 
 import java.util.List;
 
@@ -10,7 +10,7 @@ import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
-import todo.list.project.model.Categoria;
+import todo.list.Project.model.Categoria;
 
 @Path("/categorias")
 public class CategoriaResource {

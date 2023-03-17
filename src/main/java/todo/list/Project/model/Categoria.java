@@ -1,4 +1,4 @@
-package todo.list.project.model;
+package todo.list.Project.model;
 
 import java.util.List;
 

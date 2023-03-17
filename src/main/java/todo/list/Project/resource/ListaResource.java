@@ -1,6 +1,7 @@
-package todo.list.project.resource;
+package todo.list.Project.resource;
 
 import java.util.List;
+import java.util.Set;
 
 import javax.transaction.Transactional;
 import javax.ws.rs.Consumes;
@@ -13,7 +14,16 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
-import todo.list.project.model.*;
+import todo.list.Project.model.*;
+import todo.list.Project.service.ListaValidation;
+
+import javax.validation.ConstraintViolation;
+import javax.validation.ConstraintViolationException;
+import javax.validation.Validation;
+import javax.validation.Validator;
+import javax.validation.ValidatorFactory;
+
+
 
 @Path("/listas")
 public class ListaResource {
@@ -23,14 +33,27 @@ public class ListaResource {
         return Lista.findAll().list();
     }
 
-    @POST
+        @POST
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
     @Transactional
-    public Lista create(Lista lista) {
-        lista.persist();
-        return lista;
+    public Lista create(ListaValidation listaValidation) {
+        ValidatorFactory factory = Validation.buildDefaultValidatorFactory();
+        Validator validator = factory.getValidator();
+        Set<ConstraintViolation<ListaValidation>> violations = validator.validate(listaValidation);
+
+        if (violations.isEmpty()) {
+            Lista lista = new Lista();
+            lista.setNomeItem(listaValidation.getNomeItem());
+            lista.setDescricao(listaValidation.getDescricao());
+            lista.setQuantidade(listaValidation.getQuantidade());
+            lista.persist();
+            return lista;
+        } else {
+            throw new ConstraintViolationException(violations);
+        }
     }
+
 
     @GET
     @Path("/{id}")
